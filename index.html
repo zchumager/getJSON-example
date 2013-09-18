@@ -1,0 +1,16 @@
+<meta charset="UTF-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<button id="btnObtenerJSON">Obtener JSON</button>
+<script>
+	$(document).on('ready', function(){
+		var firstName = null;
+		
+		$('#btnObtenerJSON').on('click', function(){
+			$.getJSON("personal.json", function(data){
+				firstName = data['fullName']['firstName'];
+				console.log(data['fullName']['firstName']);
+			});
+			console.log("Primer nombre "+firstName);			
+		});
+	});
+</script>
